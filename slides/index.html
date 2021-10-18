@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="utf-8"/>
-<title>Einführung in git</title>
+<title>Einführung in Git</title>
 <meta name="author" content="lambdaforge"/>
 <style type="text/css">
 .underline { text-decoration: underline; }
@@ -17,25 +17,25 @@
 <div class="reveal">
 <div class="slides">
 <section id="sec-title-slide">
-<h1 class="title">Einführung in git</h1><h2 class="author">lambdaforge</h2><h2 class="date">2021-10-19</h2>
+<h1 class="title">Einführung in Git</h1><h2 class="author">lambdaforge</h2><h2 class="date">2021-10-19</h2>
 </section>
 <section>
 <section id="slide-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
-<h2 id="1"><span class="section-number-2">1.</span> Konrad</h2>
+<h2 id="1"><span class="section-number-2">1.</span> Über mich</h2>
 <ul>
 <li>beruflich Entwickler seit 2015</li>
-<li>freelancer im Bereich Webentwicklung, Datenbanken und Systemadministration</li>
-<li>viele Programmiersprachen</li>
+<li>Expertise im Bereich Webentwicklung, Datenbanken und Systemadministration</li>
+<li>viele Programmiersprachen und Bereiche probiert</li>
 
 </ul>
 </section>
 </section>
 <section>
 <section id="slide-2" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
-<h2 id="2"><span class="section-number-2">2.</span> lambdaforge</h2>
+<h2 id="2"><span class="section-number-2">2.</span> Über lambdaforge</h2>
 <ul>
 <li>gegründet 2018</li>
-<li>aktuell 4 Angestellte, 3 Externe, 1 Praktikanten, 2 Berater</li>
+<li>aktuell 4 Angestellte, 3 Externe, 1 Praktikantin, 2 Beratende</li>
 <li>Expertise in Data Engineering, Webentwicklung, Dev Ops, Projektmanagement</li>
 <li>Kunden in verschiedenen Branchen von Staaten und Großkonzernen, über Mittelstand zu Start-Ups</li>
 <li>Entwicklung im Zentrum</li>
@@ -47,7 +47,7 @@
 <section id="slide-3" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
 <h2 id="3"><span class="section-number-2">3.</span> Versionsverwaltung</h2>
 
-<div id="org99c4306" class="figure">
+<div id="org22534ac" class="figure">
 <p><object type="image/svg+xml" data="./source_code_management.svg" class="org-svg">
 Sorry, your browser does not support SVG.</object>
 </p>
@@ -79,7 +79,7 @@ Sorry, your browser does not support SVG.</object>
 <li>Parallelisiertes Arbeiten durch Branches und Merges</li>
 <li>Verfolgbarkeit durch Verbindung zu Projektmanagementsystemen</li>
 <li>Interoperabilität</li>
-<li>De-Zentralisierte verteilte Architektur</li>
+<li>De-Zentralisierung</li>
 <li>Performanz</li>
 
 </ul>
@@ -90,7 +90,8 @@ Sorry, your browser does not support SVG.</object>
 <h3 id="4-2"><span class="section-number-3">4.2.</span> Github</h3>
 <ul>
 <li>Serviceprovider für Versionsverwaltung</li>
-<li><a href="https://github.com/">https://github.com/</a></li>
+<li><a href="https://github.com">https://github.com</a></li>
+<li><a href="https://github.com/lambdaforge/hackschool-beispiel">https://github.com/lambdaforge/hackschool-beispiel</a></li>
 
 </ul>
 </section>
@@ -106,7 +107,7 @@ Sorry, your browser does not support SVG.</object>
 <section id="slide-4-3-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
 <h4 id="4-3-1"><span class="section-number-4">4.3.1.</span> Repository</h4>
 
-<div id="org102ae5f" class="figure">
+<div id="org54d0c22" class="figure">
 <p><object type="image/svg+xml" data="./repo.svg" class="org-svg">
 Sorry, your browser does not support SVG.</object>
 </p>
@@ -159,7 +160,7 @@ bestehendes Projekt aus zentralem Repository
 <div class="org-src-container">
 
 <pre class="src src-bash"><span style="color: #ffb86c;">cd</span> ~/engineering/hackschool/hackschool-beispiel
-<span style="color: #ffb86c;">echo</span> <span style="color: #f1fa8c;">"Hello Hackschool!"</span> &gt;&gt; HelloHackSchool.txt
+<span style="color: #ffb86c;">echo</span> <span style="color: #f1fa8c;">"Hello Hackschool"</span> &gt;&gt; HelloHackSchool.txt
 git add HelloHackSchool.txt
 git commit -m <span style="color: #f1fa8c;">"add hello text"</span>
 </pre>
@@ -221,7 +222,7 @@ Name
 <section id="slide-4-4" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
 <h3 id="4-4"><span class="section-number-3">4.4.</span> Branching</h3>
 
-<div id="org4b084c0" class="figure">
+<div id="orgcd24090" class="figure">
 <p><object type="image/svg+xml" data="./branching.svg" class="org-svg">
 Sorry, your browser does not support SVG.</object>
 </p>
@@ -236,7 +237,7 @@ Sorry, your browser does not support SVG.</object>
 <section id="slide-4-4-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
 <h4 id="4-4-1"><span class="section-number-4">4.4.1.</span> Neue Branches</h4>
 
-<div id="org802513a" class="figure">
+<div id="org77de29d" class="figure">
 <p><object type="image/svg+xml" data="./creating-branches-1.svg" class="org-svg">
 Sorry, your browser does not support SVG.</object>
 </p>
@@ -247,7 +248,7 @@ Sorry, your browser does not support SVG.</object>
 </pre>
 </div>
 
-<div id="orge16a6f1" class="figure">
+<div id="org312315a" class="figure">
 <p><object type="image/svg+xml" data="./creating-branches-2.svg" class="org-svg">
 Sorry, your browser does not support SVG.</object>
 </p>
@@ -300,7 +301,7 @@ Sorry, your browser does not support SVG.</object>
 <div class="org-src-container">
 
 <pre class="src src-bash">git checkout -b bonjour-hackschool main
-<span style="color: #ffb86c;">echo</span> <span style="color: #f1fa8c;">"Bonjour Hackschool!"</span> &gt;&gt; BonjourHackSchool.txt
+<span style="color: #ffb86c;">echo</span> <span style="color: #f1fa8c;">"Bonjour Hackschool"</span> &gt;&gt; BonjourHackSchool.txt
 git add BonjourHackSchool.txt
 git commit -m <span style="color: #f1fa8c;">"add bonour text"</span>
 git checkout main
@@ -341,6 +342,42 @@ this is conflicted text from feature branch
 <h4 id="4-6-2"><span class="section-number-4">4.6.2.</span> Auflösung</h4>
 <ul>
 <li>Änderung in Datei zur Bereinigung</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-7" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h3 id="4-7"><span class="section-number-3">4.7.</span> Pull-Requests auf Github</h3>
+<ul>
+<li>PR-Prozess zum merge von slides in main</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-5" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h2 id="5"><span class="section-number-2">5.</span> Aufgabe 1</h2>
+<ul>
+<li>Account auf github erzeugen und zu Repository einladen lassen</li>
+<li>Repository auf GitHub erstellen</li>
+<li>Branches erstellen jeweils mit eigenem Namen als Branch-Name</li>
+<li>Datei mit eigenem Namen erzeugen, commiten und pushen</li>
+<li>Pull-Request erzeugen und akzeptieren</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-6" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h2 id="6"><span class="section-number-2">6.</span> Aufgabe 2</h2>
+<ul>
+<li>Zwei Gruppen bilden</li>
+<li>Jeweils einen Branch erstellen mit Namen gruppe-1 und gruppe-2</li>
+<li>Datei erstellen mit Titel: Themen.txt</li>
+<li>bisherige Themen der Hackschool auflisten</li>
+<li>commit, pushen, merge erst für Gruppe 1 dann für Gruppe 2</li>
+<li>Konflikt wird gemeinsam bearbeitet</li>
 
 </ul>
 </section>

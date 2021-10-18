@@ -1,4 +1,4 @@
-#+TITLE: Einführung in git
+#+TITLE: Einführung in Git
 #+AUTHOR: lambdaforge
 #+Date: 2021-10-19
 #+REVEAL_THEME: black
@@ -11,13 +11,13 @@
 #+REVEAL_DEFAULT_SLIDE_BACKGROUND: https://lambdaforge.io/assets/images/lambdaforge.svg
 #+REVEAL_DEFAULT_SLIDE_BACKGROUND_SIZE: 4em
 #+REVEAL_DEFAULT_SLIDE_BACKGROUND_POSITION: top left
-* Konrad
+* Über mich
   - beruflich Entwickler seit 2015
-  - freelancer im Bereich Webentwicklung, Datenbanken und Systemadministration
-  - viele Programmiersprachen
-* lambdaforge
+  - Expertise im Bereich Webentwicklung, Datenbanken und Systemadministration
+  - viele Programmiersprachen und Bereiche probiert
+* Über lambdaforge
   - gegründet 2018
-  - aktuell 4 Angestellte, 3 Externe, 1 Praktikanten, 2 Berater
+  - aktuell 4 Angestellte, 3 Externe, 1 Praktikantin, 2 Beratende
   - Expertise in Data Engineering, Webentwicklung, Dev Ops, Projektmanagement
   - Kunden in verschiedenen Branchen von Staaten und Großkonzernen, über Mittelstand zu Start-Ups
   - Entwicklung im Zentrum
@@ -35,11 +35,12 @@
    - Parallelisiertes Arbeiten durch Branches und Merges
    - Verfolgbarkeit durch Verbindung zu Projektmanagementsystemen
    - Interoperabilität
-   - De-Zentralisierte verteilte Architektur
+   - De-Zentralisierung
    - Performanz
 ** Github
    - Serviceprovider für Versionsverwaltung
-   - [[https://github.com/]]
+   - [[https://github.com]]
+   - [[https://github.com/lambdaforge/hackschool-beispiel]]
 ** Setup
 *** Repository
     [[./repo.svg]]
@@ -133,3 +134,18 @@
     #+END_SRC
 *** Auflösung
     - Änderung in Datei zur Bereinigung
+** Pull-Requests auf Github
+   - PR-Prozess zum merge von slides in main 
+* Aufgabe 1
+  - Account auf github erzeugen und zu Repository einladen lassen
+  - Repository auf GitHub erstellen
+  - Branches erstellen jeweils mit eigenem Namen als Branch-Name
+  - Datei mit eigenem Namen erzeugen, commiten und pushen
+  - Pull-Request erzeugen und akzeptieren
+* Aufgabe 2
+  - Zwei Gruppen bilden
+  - Jeweils einen Branch erstellen mit Namen gruppe-1 und gruppe-2
+  - Datei erstellen mit Titel: Themen.txt
+  - bisherige Themen der Hackschool auflisten
+  - commit, pushen, merge erst für Gruppe 1 dann für Gruppe 2
+  - Konflikt wird gemeinsam bearbeitet
