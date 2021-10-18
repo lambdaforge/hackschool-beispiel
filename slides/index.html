@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>Einführung in git</title>
+<meta name="author" content="lambdaforge"/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="file:///home/konrad/.revealjs/dist/reveal.css"/>
+
+<link rel="stylesheet" href="file:///home/konrad/.revealjs/dist/theme/black.css" id="theme"/>
+
+<link rel="stylesheet" href="https://lambdaforge.io/assets/css/slides.css"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide">
+<h1 class="title">Einführung in git</h1><h2 class="author">lambdaforge</h2><h2 class="date">2021-10-19</h2>
+</section>
+<section>
+<section id="slide-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h2 id="1"><span class="section-number-2">1.</span> Konrad</h2>
+<ul>
+<li>beruflich Entwickler seit 2015</li>
+<li>freelancer im Bereich Webentwicklung, Datenbanken und Systemadministration</li>
+<li>viele Programmiersprachen</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-2" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h2 id="2"><span class="section-number-2">2.</span> lambdaforge</h2>
+<ul>
+<li>gegründet 2018</li>
+<li>aktuell 4 Angestellte, 3 Externe, 1 Praktikanten, 2 Berater</li>
+<li>Expertise in Data Engineering, Webentwicklung, Dev Ops, Projektmanagement</li>
+<li>Kunden in verschiedenen Branchen von Staaten und Großkonzernen, über Mittelstand zu Start-Ups</li>
+<li>Entwicklung im Zentrum</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-3" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h2 id="3"><span class="section-number-2">3.</span> Versionsverwaltung</h2>
+
+<div id="org99c4306" class="figure">
+<p><object type="image/svg+xml" data="./source_code_management.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+<ul>
+<li>System zur Erfassung von Änderungen in Dateien</li>
+<li>Versionen mit Zeitstempel und Nutzer</li>
+<li>gesichert und wiederherstellbar</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h2 id="4"><span class="section-number-2">4.</span> Git</h2>
+<ul>
+<li>freie Software erschienen in 2005</li>
+<li>verteilte Versionsverwaltung</li>
+<li>verwendet in den vielen Projekten</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h3 id="4-1"><span class="section-number-3">4.1.</span> Vorteile</h3>
+<ul>
+<li>Wiederherstellbarkeit durch Historie aller Änderungen am Quellcode</li>
+<li>Parallelisiertes Arbeiten durch Branches und Merges</li>
+<li>Verfolgbarkeit durch Verbindung zu Projektmanagementsystemen</li>
+<li>Interoperabilität</li>
+<li>De-Zentralisierte verteilte Architektur</li>
+<li>Performanz</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-2" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h3 id="4-2"><span class="section-number-3">4.2.</span> Github</h3>
+<ul>
+<li>Serviceprovider für Versionsverwaltung</li>
+<li><a href="https://github.com/">https://github.com/</a></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-3" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h3 id="4-3"><span class="section-number-3">4.3.</span> Setup</h3>
+<div class="outline-text-3" id="text-4-3">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-4-3-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-3-1"><span class="section-number-4">4.3.1.</span> Repository</h4>
+
+<div id="org102ae5f" class="figure">
+<p><object type="image/svg+xml" data="./repo.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+<ul>
+<li>virtueller Storage des Projekts</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-3-2" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-3-2"><span class="section-number-4">4.3.2.</span> Initialisierung</h4>
+<ul>
+<li><p>
+leeres Projekt
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">git init
+</pre>
+</div></li>
+<li><p>
+bestehendes Projekt aus zentralem Repository
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">git clone https://github.com/lambdaforge/hackschool-beispiel.git
+</pre>
+</div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-3-3" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-3-3"><span class="section-number-4">4.3.3.</span> Hinzufügen von Änderungen</h4>
+<ul>
+<li>in Verzeichnis wechseln</li>
+<li>neue Datei HelloHackSchool.txt erzeugen</li>
+<li>Datei zu Staging hinzufügen</li>
+<li>Neuen Commit erzeugen</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-3-4" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-3-4"><span class="section-number-4">4.3.4.</span> Hinzufügen von Änderungen (Code)</h4>
+<div class="org-src-container">
+
+<pre class="src src-bash"><span style="color: #ffb86c;">cd</span> ~/engineering/hackschool/hackschool-beispiel
+<span style="color: #ffb86c;">echo</span> <span style="color: #f1fa8c;">"Hello Hackschool!"</span> &gt;&gt; HelloHackSchool.txt
+git add HelloHackSchool.txt
+git commit -m <span style="color: #f1fa8c;">"add hello text"</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-4-3-5" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-3-5"><span class="section-number-4">4.3.5.</span> Repo-zu-Repo-Kollaboration</h4>
+<ul>
+<li>lokale Kopie vs Remote-Kopie</li>
+<li>Zentralisierung durch Konvention</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-3-6" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-3-6"><span class="section-number-4">4.3.6.</span> Änderungen teilen</h4>
+<ul>
+<li><p>
+Repository checken
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">git remote -v
+</pre>
+</div></li>
+<li><p>
+Änderungen mit hochladen
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">git push -u origin master
+</pre>
+</div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-3-7" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-3-7"><span class="section-number-4">4.3.7.</span> Konfiguration</h4>
+<ul>
+<li>Email</li>
+<li><p>
+Name
+</p>
+<div class="org-src-container">
+
+<pre class="src src-bash">git config --global -l
+</pre>
+</div></li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-4" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h3 id="4-4"><span class="section-number-3">4.4.</span> Branching</h3>
+
+<div id="org4b084c0" class="figure">
+<p><object type="image/svg+xml" data="./branching.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+<ul>
+<li>Zeiger auf commit</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-4-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-4-1"><span class="section-number-4">4.4.1.</span> Neue Branches</h4>
+
+<div id="org802513a" class="figure">
+<p><object type="image/svg+xml" data="./creating-branches-1.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-bash">git branch crazy-experiment
+</pre>
+</div>
+
+<div id="orge16a6f1" class="figure">
+<p><object type="image/svg+xml" data="./creating-branches-2.svg" class="org-svg">
+Sorry, your browser does not support SVG.</object>
+</p>
+</div>
+<div class="org-src-container">
+
+<pre class="src src-bash">git checkout crazy-experiment
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-4-4-2" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-4-2"><span class="section-number-4">4.4.2.</span> Neue remote branches</h4>
+<div class="org-src-container">
+
+<pre class="src src-bash">git push origin crazy-experiment
+</pre>
+</div>
+<ul>
+<li>neue Branches auf remote Repositories</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-4-3" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-4-3"><span class="section-number-4">4.4.3.</span> Löschen</h4>
+<div class="org-src-container">
+
+<pre class="src src-bash">git branch -d crazy-experiment
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-4-5" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h3 id="4-5"><span class="section-number-3">4.5.</span> Merges</h3>
+<ul>
+<li>Verbindet mehrere Commits zu Historie</li>
+<li>Fast Forward, Three-Way-Merge</li>
+<li>Automatische Commit-Erzeugung</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-5-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-5-1"><span class="section-number-4">4.5.1.</span> Beispiel</h4>
+<div class="org-src-container">
+
+<pre class="src src-bash">git checkout -b bonjour-hackschool main
+<span style="color: #ffb86c;">echo</span> <span style="color: #f1fa8c;">"Bonjour Hackschool!"</span> &gt;&gt; BonjourHackSchool.txt
+git add BonjourHackSchool.txt
+git commit -m <span style="color: #f1fa8c;">"add bonour text"</span>
+git checkout main
+git merge bonour-hackschool
+git branch -d new-feature
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-4-6" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h3 id="4-6"><span class="section-number-3">4.6.</span> Konflikte</h3>
+<ul>
+<li>treten auf wenn zwei Branches dieselbe Zeile einer Datei änderten</li>
+<li>muss händisch gelöst werden</li>
+<li>wird in Code von git markiert</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-4-6-1" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-6-1"><span class="section-number-4">4.6.1.</span> Beispiel</h4>
+<div class="org-src-container">
+
+<pre class="src src-markdown">here is some content not affected by the conflict
+&lt;&lt;&lt;&lt;&lt;&lt;&lt; main
+<span style="color: #ff5555; font-weight: bold;">this is conflicted text from main</span>
+<span style="color: #6272a4;">=======</span>
+this is conflicted text from feature branch
+<span style="color: #6272a4; font-style: italic;">&gt;</span><span style="color: #8995ba; font-style: italic;">&gt;&gt;&gt;&gt;&gt;&gt; feature branch;</span>
+</pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-4-6-2" data-background="https://lambdaforge.io/assets/images/lambdaforge.svg" data-background-size="4em" data-background-position="top left">
+<h4 id="4-6-2"><span class="section-number-4">4.6.2.</span> Auflösung</h4>
+<ul>
+<li>Änderung in Datei zur Bereinigung</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="file:///home/konrad/.revealjs/dist/reveal.js"></script>
+<script src="file:///home/konrad/.revealjs/plugin/markdown/markdown.js"></script>
+<script src="file:///home/konrad/.revealjs/plugin/notes/notes.js"></script>
+<script src="file:///home/konrad/.revealjs/plugin/search/search.js"></script>
+<script src="file:///home/konrad/.revealjs/plugin/zoom/zoom.js"></script>
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+
+controls: true,
+progress: true,
+history: false,
+center: true,
+slideNumber: 'c',
+rollingLinks: false,
+keyboard: true,
+mouseWheel: false,
+fragmentInURL: false,
+hashOneBasedIndex: false,
+pdfSeparateFragments: true,
+overview: true,
+
+transition: 'convex',
+transitionSpeed: 'default',
+
+// Plugins with reveal.js 4.x
+plugins: [ RevealMarkdown, RevealNotes, RevealSearch, RevealZoom ],
+
+// Optional libraries used to extend reveal.js
+dependencies: [
+]
+
+});
+</script>
+</body>
+</html>

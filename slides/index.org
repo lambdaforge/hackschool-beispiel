@@ -1,0 +1,135 @@
+#+TITLE: Einführung in git
+#+AUTHOR: lambdaforge
+#+Date: 2021-10-19
+#+REVEAL_THEME: black
+#+REVEAL_TRANS: convex
+#+REVEAL_HLEVEL: 3
+#+OPTIONS: toc:nil timestamp:nil
+#+REVEAL_ROOT: file:///home/konrad/.revealjs
+#+REVEAL_INIT_OPTIONS: history:true, center:true, progress:true, slideNumber:true, slideNumber:'c/t', hlevel: 2
+#+REVEAL_EXTRA_CSS: https://lambdaforge.io/assets/css/slides.css
+#+REVEAL_DEFAULT_SLIDE_BACKGROUND: https://lambdaforge.io/assets/images/lambdaforge.svg
+#+REVEAL_DEFAULT_SLIDE_BACKGROUND_SIZE: 4em
+#+REVEAL_DEFAULT_SLIDE_BACKGROUND_POSITION: top left
+* Konrad
+  - beruflich Entwickler seit 2015
+  - freelancer im Bereich Webentwicklung, Datenbanken und Systemadministration
+  - viele Programmiersprachen
+* lambdaforge
+  - gegründet 2018
+  - aktuell 4 Angestellte, 3 Externe, 1 Praktikanten, 2 Berater
+  - Expertise in Data Engineering, Webentwicklung, Dev Ops, Projektmanagement
+  - Kunden in verschiedenen Branchen von Staaten und Großkonzernen, über Mittelstand zu Start-Ups
+  - Entwicklung im Zentrum
+* Versionsverwaltung
+  [[./source_code_management.svg]]
+  - System zur Erfassung von Änderungen in Dateien
+  - Versionen mit Zeitstempel und Nutzer
+  - gesichert und wiederherstellbar
+* Git
+   - freie Software erschienen in 2005
+   - verteilte Versionsverwaltung
+   - verwendet in den vielen Projekten
+** Vorteile
+   - Wiederherstellbarkeit durch Historie aller Änderungen am Quellcode
+   - Parallelisiertes Arbeiten durch Branches und Merges
+   - Verfolgbarkeit durch Verbindung zu Projektmanagementsystemen
+   - Interoperabilität
+   - De-Zentralisierte verteilte Architektur
+   - Performanz
+** Github
+   - Serviceprovider für Versionsverwaltung
+   - [[https://github.com/]]
+** Setup
+*** Repository
+    [[./repo.svg]]
+    - virtueller Storage des Projekts
+*** Initialisierung
+    - leeres Projekt
+     #+BEGIN_SRC bash
+     git init
+     #+END_SRC
+    - bestehendes Projekt aus zentralem Repository
+      #+BEGIN_SRC bash
+        git clone https://github.com/lambdaforge/hackschool-beispiel.git
+      #+END_SRC
+*** Hinzufügen von Änderungen
+    - in Verzeichnis wechseln
+    - neue Datei HelloHackSchool.txt erzeugen
+    - Datei zu Staging hinzufügen
+    - Neuen Commit erzeugen
+*** Hinzufügen von Änderungen (Code)
+    #+BEGIN_SRC bash
+      cd ~/engineering/hackschool/hackschool-beispiel
+      echo "Hello Hackschool!" >> HelloHackSchool.txt
+      git add HelloHackSchool.txt
+      git commit -m "add hello text"
+    #+END_SRC
+*** Repo-zu-Repo-Kollaboration
+    - lokale Kopie vs Remote-Kopie
+    - Zentralisierung durch Konvention
+*** Änderungen teilen
+    - Repository checken
+      #+BEGIN_SRC bash
+        git remote -v
+      #+END_SRC
+    - Änderungen mit hochladen
+      #+BEGIN_SRC bash
+        git push -u origin master
+      #+END_SRC
+*** Konfiguration
+    - Email
+    - Name
+      #+BEGIN_SRC bash
+        git config --global -l
+      #+END_SRC
+** Branching
+   [[./branching.svg]]
+   - Zeiger auf commit
+*** Neue Branches
+    [[./creating-branches-1.svg]]
+    #+BEGIN_SRC bash
+      git branch crazy-experiment
+    #+END_SRC
+    [[./creating-branches-2.svg]]
+    #+BEGIN_SRC bash
+      git checkout crazy-experiment
+    #+END_SRC
+*** Neue remote branches
+    #+BEGIN_SRC bash
+      git push origin crazy-experiment
+    #+END_SRC
+    - neue Branches auf remote Repositories
+*** Löschen
+    #+BEGIN_SRC bash
+      git branch -d crazy-experiment
+    #+END_SRC
+** Merges
+   - Verbindet mehrere Commits zu Historie
+   - Fast Forward, Three-Way-Merge
+   - Automatische Commit-Erzeugung
+*** Beispiel
+     #+BEGIN_SRC bash
+      git checkout -b bonjour-hackschool main
+      echo "Bonjour Hackschool!" >> BonjourHackSchool.txt
+      git add BonjourHackSchool.txt
+      git commit -m "add bonour text"
+      git checkout main
+      git merge bonour-hackschool
+      git branch -d new-feature
+     #+END_SRC
+** Konflikte
+   - treten auf wenn zwei Branches dieselbe Zeile einer Datei änderten
+   - muss händisch gelöst werden
+   - wird in Code von git markiert
+*** Beispiel
+    #+BEGIN_SRC markdown
+      here is some content not affected by the conflict
+      <<<<<<< main
+      this is conflicted text from main
+      =======
+      this is conflicted text from feature branch
+      >>>>>>> feature branch;
+    #+END_SRC
+*** Auflösung
+    - Änderung in Datei zur Bereinigung
