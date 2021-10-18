@@ -61,7 +61,7 @@
 *** Hinzufügen von Änderungen (Code)
     #+BEGIN_SRC bash
       cd ~/engineering/hackschool/hackschool-beispiel
-      echo "Hello Hackschool!" >> HelloHackSchool.txt
+      echo "Hello Hackschool" >> HelloHackSchool.txt
       git add HelloHackSchool.txt
       git commit -m "add hello text"
     #+END_SRC
@@ -111,7 +111,7 @@
 *** Beispiel
      #+BEGIN_SRC bash
       git checkout -b bonjour-hackschool main
-      echo "Bonjour Hackschool!" >> BonjourHackSchool.txt
+      echo "Bonjour Hackschool" >> BonjourHackSchool.txt
       git add BonjourHackSchool.txt
       git commit -m "add bonour text"
       git checkout main
